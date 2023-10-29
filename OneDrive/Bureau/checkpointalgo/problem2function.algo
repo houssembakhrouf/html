@@ -1,0 +1,39 @@
+FUNCTION remplir(tab : ARRAY_OF integer[50];) :  ARRAY_OF integer[50];
+VAR
+   i : INTEGER ;
+BEGIN
+   FOR i FROM 0 TO tab.length -1 STEP 1  DO
+    READ(tab[i]);
+   END_FOR
+    RETURN tab ;
+END
+
+FUNCTION produitscalaire(tab1 , tab2  : ARRAY_OF INTEGER[M]) : INTEGER
+VAR
+    set_declarations
+BEGIN
+   ps:=0
+ 
+ FOR i FROM 0 TO M-1 STEP 1  DO
+   ps:= ps + (tab1[i]*tab2[i])
+ END_FOR
+    RETURN ps ;
+END
+
+
+
+ALGORITHM problem2
+VAR
+ t1 , t2 : array_name : ARRAY_OF INTEGER[M]; 
+
+BEGIN
+  remplir(t1);
+   remplir(t2);
+    produitscalaire(t1 , t2);
+    IF (ps==0) THEN
+        Write("les deux vecteurs sont orthogonaux")
+        ELSE 
+         Write("les deux vecteurs ne sont pas orthogonaux")
+    END_IF
+   
+END

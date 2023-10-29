@@ -1,0 +1,30 @@
+
+
+FUNCTION palind(mot STRING ; i , j : INTEGER ) : BOOLEAN
+VAR
+   
+BEGIN
+    IF (i => j ) THEN
+        RETURN (true)
+        ELSE IF (palind (mot , i+1 , j-1 )) 
+           
+        
+    END_IF
+    RETURN value ;
+END
+
+ALGORITHM algorithm_name
+VAR
+   chaine : STRING ;
+   res : BOOLEAN ;
+   i , j INTEGER ;
+BEGIN
+  Read (chaine);
+  j:=chaine.length ;
+  res:= palind(chaine , i , j )
+  IF (res==true) THEN
+    Write("est palindrome")
+    ELSE 
+     Write("n'est pas palindrome")
+  END_IF
+END

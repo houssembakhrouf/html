@@ -1,0 +1,42 @@
+FUNCTION remplir(tab : ARRAY_OF integer[50];) :  ARRAY_OF integer[50];
+VAR
+   i : INTEGER ;
+BEGIN
+   FOR i FROM 0 TO tab.length -1 STEP 1  DO
+    READ(tab[i]);
+   END_FOR
+    RETURN tab ;
+END
+
+FUNCTION parcour(tab,tab2  : ARRAY_OF integer[50];): INTEGER;
+VAR
+    i : INTEGER
+    exist : BOOLEAN ;
+BEGIN
+exist:= false
+    FOR i FROM 0 TO tab.length-1 STEP 1  DO
+    FOR j FROM 0 TO tab2.length-1 STEP 1  DO
+       IF (tab[i]== tab2[j]) THEN
+        exist:= true ;
+       END_IF
+    END_FOR  
+    IF (exist == false) THEN
+        s = s + tab[i]
+    END_IF
+    END_FOR
+    RETURN s ;
+END
+
+
+ALGORITHM algorithm_name
+VAR
+    set1  : ARRAY_OF integer[50];
+    set2  : ARRAY_OF integer[50];
+    sum , sum1 , sum2  : INTEGER =0;
+BEGIN
+   remplir(set1);
+   remplir(set2);
+
+sum=parcour(set1 , set2) + parcour( set2 , ste1);
+
+
